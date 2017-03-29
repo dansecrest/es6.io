@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Template Strings</title>
+</head>
+
+<body>
+    <script>
+        const song = {
+            name: 'The Beautiful People',
+            artist: 'Marilyn Manson',
+            featuring: 'Trent Reznor',
+            keywords: ['single', 'metal', 'industrial']
+        }
+
+        // Render function to minimize nesting within template literals
+        function renderKeywords(keywords) {
+            return `
+                <ul>
+                    ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        // Nested ternary operator
+        const markup = `
+            <div class="song">
+                <p>
+                    ${song.name} - ${song.artist}
+                    ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+                </p>
+                ${renderKeywords(song.keywords)}
+            </div>
+        `;
+
+        document.body.innerHTML = markup;
+    </script>
+</body>
+
+</html>

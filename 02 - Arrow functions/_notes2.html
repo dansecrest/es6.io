@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <script>
+        // Data supplied
+        const race = '100m Dash';
+        const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
+
+        // Preferred data structure
+        const object = {
+            name: 'Wes Bos',
+            place: 1,
+            race: race
+        };
+
+        // Implicit return with an object literal
+        const win = winners.map((winner, i) => ({
+            name: winner,
+            race: race,
+            place: i + 1
+        }));
+        console.table(win);
+
+        const ages = [23, 56, 100, 30, 66, 88];
+        const old = ages.filter(age => age >= 60);
+        console.log(old);
+    </script>
+</body>
+
+</html>

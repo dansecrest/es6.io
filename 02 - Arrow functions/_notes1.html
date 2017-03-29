@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <script>
+        const names = ['wes', 'kait', 'lux'];
+
+        const fullNames = names.map(function(name) {
+            return `${name} bos`
+        });
+
+        // Explicit return
+        const fullNames2 = names.map((name) => {
+            return `${name} bos`
+        });
+
+        // Implicit return
+        const fullNames3 = names.map((name) => `${name} bos`);
+        console.log(fullNames3);
+
+        // Implcit return from a function without arguments
+        const fullNames4 = names.map(() => `ha bos`);
+        console.log(fullNames4);
+
+        // Arrow functions are anonymous and cannot be named but can be put in a variable
+        // Function Declaration
+        const sayMyName = (name) => {
+            console.log(`Hello ${name}!`);
+        };
+        sayMyName('Dan');
+    </script>
+</body>
+
+</html>

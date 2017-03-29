@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tagged Template Literals</title>
+    <style>
+        .highlight {
+            background-color: #ffc600;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Pieces (strings and values) of template literal are supplied to function in arrays
+        // rest operator puts all the remaining (rest) parameters in an array
+        function highlight(strings, ...values) {
+            // debugger; - stops the code here
+
+            let message = '';
+
+            strings.forEach((string, i) => {
+                message += `${string} <span contenteditable class="highlight">${(values[i] || '')}</span>`;
+            });
+
+            return message;
+        }
+
+        const name = 'Oreo';
+        const age = 9;
+
+        // Run a template string through a function to allow for tagging
+        const sentence = highlight `My cat's name is ${name} and she is ${age} years old`;
+
+        document.body.innerHTML = sentence;
+    </script>
+</body>
+
+</html>

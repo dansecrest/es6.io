@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Destructuring in Action</title>
+</head>
+
+<body>
+    <script>
+        let inRing = 'Hulk Hogan';
+        let onSide = 'The Rock';
+
+        // Destructure to swapped values
+        console.log(inRing, onSide);
+        [inRing, onSide] = [onSide, inRing];
+        console.log(inRing, onSide);
+    </script>
+</body>
+
+</html>
