@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Iterables &amp; Looping</title>
+</head>
+
+<body>
+    <script>
+        const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
+
+        // Regular for loop
+        // syntax is confusing and using var cause closure issue
+        // for (let i = 0; i < cuts.length; i++) {
+        //     console.log(cuts[i]);
+        // }
+
+        // .forEach array method
+        // cuts.forEach((cut) => {
+        //     console.log(cut);
+        // });
+
+        // for in loop
+        // for (const index in cuts) {
+        //     console.log(cuts[index]);
+        // }
+
+        // for of loop
+        for (const cut of cuts) {
+            // Use to skip an item
+            if (cut === 'Brisket') {
+                continue;
+            }
+
+            console.log(cut);
+
+            // Use to stop the loop
+            // if (cut === 'Brisket') {
+            //     break;
+            // }
+        }
+    </script>
+</body>
+
+</html>
