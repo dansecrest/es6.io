@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        const apple = {
+            color: 'Red',
+            size: 'Medium',
+            weight: 50,
+            sugar: 10
+        };
+
+        // An object cannot be iterated over
+        // Object.keys creates an array of the object's keys
+        // for (const prop of Object.keys(apple)) {
+        //     const value = apple[prop];
+        //     console.log(value, prop);
+        // }
+
+        // Use for in to loop objects until Object.entries is available in ES2017
+        for (const prop in apple) {
+            const value = apple[prop];
+            console.log(value, prop);
+        }
+    </script>
+</body>
+
+</html>
