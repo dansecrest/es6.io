@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Array .from() and .of()</title>
+</head>
+
+<body>
+    <div class="people">
+        <p>Dan</p>
+        <p>Draven</p>
+        <p>Oreo</p>
+    </div>
+
+    <script>
+        const people = document.querySelectorAll('.people p');
+        // Array.from() changes the prototype from a NodeList to an Array
+        // Second argument allows for mapping over the array
+        const peopleArray = Array.from(people, person => {
+            return person.textContent;
+        });
+
+        console.log(peopleArray);
+
+
+        function sumAll() {
+            // Use Array.from since arguments is array-ish
+            const nums = Array.from(arguments);
+            return nums.reduce((prev, next) => prev + next, 0);
+        }
+
+        console.log(sumAll(21,55,87878,9996,45421));
+
+
+        // Array.of creates an array out of all arguments that are passed
+        const ages = Array.of(12,45,88,33)
+
+        console.log(ages);
+    </script>
+</body>
+
+</html>
