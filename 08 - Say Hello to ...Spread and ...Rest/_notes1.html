@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The ...Spread Operator</title>
+</head>
+
+<body>
+    <script>
+        const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+        const speciality = ['Meatzza', 'Spicy Chicken', 'Taco'];
+
+        // Spread above arrays into a new array and add an extra between
+        const pizzas = [...featured, 'Vegetable', ...speciality];
+        console.log(pizzas);
+
+        // Old way to copy an array
+        // const fridayPizzas = [].concat(pizzas);
+
+        // New way to copy an array, spread the items from one array in another
+        const fridayPizzas = [...pizzas];
+
+        const deepDish = {
+            pizzName: 'Deep Dish',
+            size: 'Medium',
+            ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+        };
+    </script>
+</body>
+
+</html>
