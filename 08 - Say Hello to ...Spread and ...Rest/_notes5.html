@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>The ...Rest Param</title>
+</head>
+
+<body>
+    <script>
+        // Function definition
+        function convertCurrency(rate, ...amounts) {
+            return amounts.map(amount => amount * rate);
+        }
+
+        const amounts = convertCurrency(1.54, 10, 23, 52, 1, 56);
+        console.log(amounts);
+
+
+        const runner = ['Dan Secrest', 123, 5.5, 5, 3, 6, 35];
+        // Destructuring
+        const [name, id, ...runs] = runner;
+        console.log(name, id, runs);
+    </script>
+</body>
+
+</html>
