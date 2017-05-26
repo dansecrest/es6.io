@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Spreading into a Function</title>
+</head>
+
+<body>
+    <script>
+        const inventors = ['Einstein', 'Newton', 'Galileo'];
+        const newInventors = ['Musk', 'Jobs'];
+
+        inventors.push(...newInventors);
+        console.log(inventors);
+
+
+        const name = ['Dan', 'Smith'];
+        
+        function sayHi (first, last) {
+            alert(`Hey there ${first} ${last}`);
+        }
+
+        sayHi(...name);
+    </script>
+</body>
+
+</html>
