@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Creating Promises</title>
+</head>
+
+<body>
+    <script>
+        // Create your own promise to allow JavaScipt to keep running and not wait on a task
+        const p = new Promise((resolve, reject) => {
+            // resolve('Hello there!');
+            setTimeout(() => {
+                // Wrap in error function to get more detail in catch below
+                reject(Error('Something went wrong!'));
+            }, 1000);
+        });
+
+        p
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
+    </script>
+</body>
+
+</html>
