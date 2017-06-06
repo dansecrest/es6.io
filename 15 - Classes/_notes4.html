@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Extending</title>
+</head>
+
+<body>
+    <script>
+        class MovieCollection extends Array {
+            // Use rest to capture all the remaining argument values
+            constructor(name, ...items) {
+                // super() is the same as called new Array()
+                // Use spread to pass them to super
+                super(...items);
+                this.name = name;
+            }
+
+            add(movie) {
+                // This extended class from Array has access to all methods
+                this.push(movie);
+            }
+
+            topRated(limit = 10) {
+                return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+            }
+        }
+
+        // Use for of to just get the items that are iterable
+        // for in would return the name property added above
+        const movies = new MovieCollection('Wes\'s Fav Movies',
+            { name: 'Bee Movie', stars: 10 },
+            { name: 'Star Wars Trek', stars: 1 },
+            { name: 'Virgin Suicides', stars: 7 },
+            { name: 'King of the Road', stars: 8 }
+        );
+
+        movies.add({ name: 'Avatar', stars: 10 });
+    </script>
+</body>
+
+</html>
