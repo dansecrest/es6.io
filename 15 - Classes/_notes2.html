@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Classes</title>
+</head>
+
+<body>
+    <script>
+        // Class declaration
+        class Dog {
+            constructor(name, breed) {
+                this.name = name;
+                this.breed = breed;
+            }
+
+            bark() {
+                console.log(`Bark Bark! My name is ${this.name}`);
+            }
+
+            cuddle() {
+                console.log(`I love you owner!`);
+            }
+
+            // Static methods cannot be called on instances
+            static info() {
+                console.log('This is a dog!');
+            }
+
+            // A getter is a property that is computed when you pull on it
+            get description() {
+                return `${this.name} is a ${this.breed} type pf dog`;
+            }
+
+            set nicknames(value) {
+                this.nick = value.trim();
+            }
+            get nicknames() {
+                return this.nick.toUpperCase();
+            }
+        }
+
+        const snickers = new Dog('Snickers', 'King Charles');
+        const sunny = new Dog('Sunny', 'Golden Doodle');
+
+        // Class expression
+        // const Dog = class {}
+    </script>
+</body>
+
+</html>
