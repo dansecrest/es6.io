@@ -1,0 +1,7 @@
+{
+    "name": "browser-sync",
+    "version": "0.1.0",
+    "scripts": {
+        "start": "browser-sync start --directory --server --files \"**/*.*\" --no-notify"
+    }
+}
